@@ -39,7 +39,8 @@ const getMySchedulesController = catchAsync(
       statusCode: httpStatus.OK,
       success: true,
       message: "My Schedules fetched successfully",
-      data: result,
+      data: result.data,
+      meta: result.meta,
     });
   }
 );
@@ -76,7 +77,8 @@ const getAllSchedulesController = catchAsync(
       statusCode: httpStatus.OK,
       success: true,
       message: "All Schedules fetched successfully",
-      data: result,
+      data: result.data,
+      meta: result.meta,
     });
   }
 );

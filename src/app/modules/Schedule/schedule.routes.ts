@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get(
   "/",
-  auth(UserRole.DOCTOR),
+  // auth(UserRole.DOCTOR),
   ScheduleControllers.getAllSchedulesController
 );
 
@@ -19,7 +19,7 @@ router.get(
 
 router.post(
   "/",
-  auth(UserRole.ADMIN, UserRole.SUPER_ADMIN),
+  // auth(UserRole.ADMIN, UserRole.SUPER_ADMIN),
   ScheduleControllers.createScheduleController
 );
 

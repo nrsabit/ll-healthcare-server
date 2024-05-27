@@ -23,7 +23,7 @@ const createDoctorSchema = z.object({
     gender: z.string({
       required_error: "Gender is required",
     }),
-    apointmentFee: z.number({
+    appointmentFee: z.number({
       required_error: "Blood group is required",
     }),
     qualification: z.string({
@@ -46,7 +46,7 @@ const updateDoctorSchema = z.object({
     registrationNumber: z.string().optional(),
     experience: z.number().optional(),
     gender: z.string().optional(),
-    apointmentFee: z.number().optional(),
+    appointmentFee: z.number().optional(),
     qualification: z.string().optional(),
     currentWorkingPlace: z.string().optional(),
     designation: z.string().optional(),

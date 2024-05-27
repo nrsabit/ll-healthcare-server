@@ -15,13 +15,14 @@ const convertDateTime = async (date: Date) => {
 
 const createScheduleService = async (
   payload: TSchedulePayload
-): Promise<Schedule[]> => {
+) => {
   const { startDate, endDate, startTime, endTime } = payload;
+
+  const intervalTime = 30;
+  const createdSchedules = [];
 
   const currentDate = new Date(startDate);
   const lastDate = new Date(endDate);
-  const intervalTime = 30;
-  const createdSchedules = [];
 
   while (currentDate <= lastDate) {
     const startDateTime = new Date(
@@ -37,7 +38,7 @@ const createScheduleService = async (
     const endDateTime = new Date(
       addMinutes(
         addHours(
-          currentDate, // we can directly use currentDate as well
+          `${format(currentDate, "yyyy-MM-dd")}`, // we can directly use currentDate as well
           Number(endTime.split(":")[0])
         ),
         Number(endTime.split(":")[1])
@@ -83,7 +84,7 @@ const createScheduleService = async (
     currentDate.setDate(currentDate.getDate() + 1);
   }
 
-  return createdSchedules;
+  // return createdSchedules;
 };
 
 const getAllSchedulesService = async (

@@ -141,7 +141,7 @@ const updateDoctorService = async (id: string, payload: any) => {
           await transactionClient.doctorSpecialties.create({
             data: {
               doctorId: doctorInfo.id,
-              specialtiesId: specialty.specialtyId,
+              specialtiesId: specialty.specialtiesId,
             },
           });
         }

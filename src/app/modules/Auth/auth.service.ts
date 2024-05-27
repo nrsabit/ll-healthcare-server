@@ -80,7 +80,7 @@ const refreshTokenService = async (token: string) => {
 
 const changePasswordService = async (user: JwtPayload, payload: any) => {
   const userData = await prisma.user.findUniqueOrThrow({
-    where: { email: user.email, status: UserStatus.ACTIVE },
+    where: { email: user?.email, status: UserStatus.ACTIVE },
   });
 
   const isPasswordMatched = await bcrypt.compare(
